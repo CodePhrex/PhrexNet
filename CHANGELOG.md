@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Sprint 03: on-demand local adapter configuration inventory and fixture tests; CI pending.
 - Sprint 02: navigable dark workspace with all 20 approved module names and explicit preview states.
 
 ## Foundation
