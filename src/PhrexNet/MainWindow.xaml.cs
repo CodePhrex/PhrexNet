@@ -1,4 +1,5 @@
 using System.Windows.Controls;
+using PhrexNet.Core;
 namespace PhrexNet;
 public partial class MainWindow : System.Windows.Window
 {
@@ -12,9 +13,23 @@ public partial class MainWindow : System.Windows.Window
     private void Navigate(object sender, SelectionChangedEventArgs e)
     {
         if (Navigation.SelectedItem is not string module || PageTitle is null || PageDescription is null) return;
+        AdapterPanel.Visibility = module == "Network Discovery" ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
         PageTitle.Text = module;
         PageDescription.Text = module == "Command Center"
             ? "Welcome to the local-first infrastructure workspace. Configure an authorized scope before future discovery operations."
-            : $"{module} is planned. Its operational capabilities are not implemented in this preview.";
+            : module == "Network Discovery" ? "Read local adapter configuration without sending probes. Active discovery is not yet available." : $"{module} is planned. Its operational capabilities are not implemented in this preview.";
+    }
+    private async void RefreshAdapters(object sender, System.Windows.RoutedEventArgs e)
+    {
+        if (sender is not Button button) return;
+        button.IsEnabled = false;
+        AdapterResults.Text = "Reading local configuration...";
+        try
+        {
+            var rows = await Task.Run(() => new AdapterInventory(new LocalAdapterSource()).Read());
+            AdapterResults.Text = rows.Count == 0 ? "No adapters reported." : string.Join("\n\n", rows.Select(AdapterInventory.Describe));
+        }
+        catch (Exception) { AdapterResults.Text = "Local adapter configuration could not be read. Retry or check OS permissions."; }
+        finally { button.IsEnabled = true; }
     }
 }
