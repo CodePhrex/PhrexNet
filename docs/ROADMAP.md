@@ -1,8 +1,8 @@
 # Delivery roadmap
 
 - Sprint 01: merged; Windows publish passed.
-- Sprint 02: workspace navigation and honest empty states; CI pending.
-- Sprint 03: local adapter inventory (read-only) and fixture tests.
+- Sprint 02: merged; Windows publish passed.
+- Sprint 03: local adapter inventory (read-only) and fixture tests; submitted for CI.
 - Sprint 04: authorized scope validation and bounded discovery.
 - Sprint 05: scoped service inventory.
 - Sprint 06: device identification.
