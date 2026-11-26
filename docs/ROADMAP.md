@@ -2,8 +2,8 @@
 
 - Sprint 01: merged; Windows publish passed.
 - Sprint 02: merged; Windows publish passed.
-- Sprint 03: local adapter inventory (read-only) and fixture tests; submitted for CI.
-- Sprint 04: authorized scope validation and bounded discovery.
+- Sprint 03: local adapter inventory (read-only) and fixture tests; merged; Windows CI passed.
+- Sprint 04: offline scope planning submitted for CI; active discovery remains pending.
 - Sprint 05: scoped service inventory.
 - Sprint 06: device identification.
 - Sprint 07: local persistent inventory.

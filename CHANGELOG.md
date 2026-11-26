@@ -1,7 +1,8 @@
 # Changelog
 
 ## Unreleased
-- Sprint 03: on-demand local adapter configuration inventory and fixture tests; CI pending.
+- Sprint 04: offline IPv4 scope validation, exclusions, cancellation and fixture tests; CI pending. No probes.
+- Sprint 03: on-demand local adapter configuration inventory and fixture tests; merged and Windows CI passed.
 - Sprint 02: navigable dark workspace with all 20 approved module names and explicit preview states.
 
 ## Foundation
