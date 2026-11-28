@@ -13,6 +13,16 @@
 <TextBlock Text="Discover. Understand. Secure. Control." Foreground="#A5B4C7" Margin="0,8,0,24"/>
 <Border Background="#172333" CornerRadius="8" Padding="20"><StackPanel><TextBlock x:Name="PageDescription" TextWrapping="Wrap" FontSize="16"/><TextBlock Text="No network probes are sent by this preview." Foreground="#00C8F0" Margin="0,16,0,0"/></StackPanel></Border>
 <StackPanel x:Name="AdapterPanel" Visibility="Collapsed" Margin="0,24,0,0"><Button Content="Refresh local adapters" Click="RefreshAdapters" HorizontalAlignment="Left" Padding="12,6"/><TextBlock x:Name="AdapterResults" TextWrapping="Wrap" Margin="0,12,0,0"/></StackPanel>
+<StackPanel x:Name="ScopePanel" Visibility="Collapsed" Margin="0,24,0,0">
+<TextBlock Text="Offline scope preview" FontSize="20"/>
+<TextBlock Text="Canonical IPv4 CIDR (/24–/32)" Margin="0,8,0,4"/>
+<TextBox x:Name="ScopeCidr" MaxLength="32"/>
+<TextBlock Text="Excluded IPv4 addresses (comma separated)" Margin="0,8,0,4"/>
+<TextBox x:Name="ScopeExclusions" MaxLength="4096"/>
+<CheckBox x:Name="ScopeConfirmed" Foreground="White" Content="I confirm this scope is authorized" Margin="0,12,0,8"/>
+<Button Content="Preview targets (no traffic)" Click="PreviewScope" HorizontalAlignment="Left" Padding="12,6"/>
+<TextBlock x:Name="ScopeResults" TextWrapping="Wrap" Margin="0,12,0,0"/>
+</StackPanel>
 <TextBlock Text="WORKSPACE STATUS" Foreground="#A5B4C7" Margin="0,32,0,12"/>
 <UniformGrid Columns="3"><Border Background="#172333" Margin="0,0,8,0" Padding="16" CornerRadius="8"><StackPanel><TextBlock Text="Assets"/><TextBlock Text="Not collected" FontSize="18" Margin="0,8,0,0"/></StackPanel></Border><Border Background="#172333" Margin="4,0" Padding="16" CornerRadius="8"><StackPanel><TextBlock Text="Scope"/><TextBlock Text="Not configured" FontSize="18" Margin="0,8,0,0"/></StackPanel></Border><Border Background="#172333" Margin="8,0,0,0" Padding="16" CornerRadius="8"><StackPanel><TextBlock Text="Scan engine"/><TextBlock Text="Not available" FontSize="18" Margin="0,8,0,0"/></StackPanel></Border></UniformGrid>
 </StackPanel></ScrollViewer>
